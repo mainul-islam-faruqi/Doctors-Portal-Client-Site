@@ -4,7 +4,7 @@ import featuredImg from '../../../images/Mask Group 3-min.png'
 
 const FeaturedService = () => {
     return (
-        <section className="container featured-service">
+        <section className=" featured-service mx-5 px-5">
             <div className="row  d-flex align-items-center">
             <div className="col-md-5">
                 <img className="img-fluid featured-img" src={featuredImg} alt=""/>
