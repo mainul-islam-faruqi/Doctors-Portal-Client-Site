@@ -1,0 +1,18 @@
+.featured-service{
+    margin-bottom: 160px;
+}
+
+.featured-img{
+    height: 500px;
+}
+
+button{
+    background-image: linear-gradient(70deg, #1bd49c, #20ceda);
+    border: none;
+    border-color: none;
+    color: white;
+    font-weight: 600;
+    padding: 8px 25px;
+    border-radius: 3px;
+
+}

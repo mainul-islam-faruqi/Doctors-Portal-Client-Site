@@ -1,11 +1,12 @@
 .header-container{
     position: relative;
     height: 920px;
-    background-image: url(../../../images/chairBg.png);
+    background-image: url(../../../images/chairBg.png) ;
     background-size: cover;
     background-position: left;
     z-index: -1;
     margin-bottom: 100px;
+    /* in background image ---  linear-gradient(50deg,transparent 55%, #3a4256 45%), */
 }
 
 .header-container::after{
