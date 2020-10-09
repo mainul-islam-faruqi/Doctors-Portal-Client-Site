@@ -1,9 +1,10 @@
 .make-appointment{
+    background-image: url("../../../images/appointmentBg.png");
     position: relative;
-    background-image: url(../../../images/appointmentBg.png);
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     height: 420px;
 }
 
@@ -14,7 +15,7 @@
     position: absolute;
     top: 0;
     background-color:  #242949;
-    opacity: .9; 
+    opacity: .8; 
 }
 
 .make-appointment .appointmentImg{
