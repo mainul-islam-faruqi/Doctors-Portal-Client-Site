@@ -15,7 +15,7 @@ const infosData = [
         title: 'Visit Out Location',
         description: 'BrooklYn, NY 10003 USA',
         icon: faMapMarkerAlt,
-        background: "primary"
+        background: "dark"
     },
     {
         id: 1,
@@ -28,10 +28,12 @@ const infosData = [
 
 const BusinessInfo = () => {
     return (
-        <section className="row">
-            {
-                infosData.map(info => <InfoCard info={info}></InfoCard>)
-            }
+        <section className=" d-flex justify-content-center">
+            <div className="w-75 row ">
+                {
+                    infosData.map(info => <InfoCard info={info}></InfoCard>)
+                }
+            </div>
         </section>
     );
 };
