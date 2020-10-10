@@ -16,10 +16,10 @@ const Contact = () => {
 
                     <input type="text" name="" placeholder='Subject*' id=""/>
 
-                    <input type="text" name="" placeholder="Your Message*" id=""/>
+                    <input type="text" name="" placeholder="Your Message*" id="" className="input-description" />
 
                     <div style={{textAlign: "center", marginTop: "20px"}} >
-                        <input  type="submit" value="SUBMIT" id="button"  />
+                        <input type="submit" value="SUBMIT" id="button"  />
                     </div>
                 </form>
             </div>
