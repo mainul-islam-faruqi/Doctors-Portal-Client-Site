@@ -1,0 +1,38 @@
+.fixed-card{
+    background-image: url(../../../images/quote.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: right;
+    z-index: 1;
+}
+
+.fixed-card::after{
+    content: " ";
+    background-image: linear-gradient(90deg, #1ecc98, #20ceda);
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    z-index: -1;
+    opacity: .7;
+}
+
+
+.card-bg{
+    background-image: linear-gradient(90deg, #1ecc98, #20ceda);
+    z-index: -1;
+}
+
+.text{
+    position: relative;
+    left: -30px;
+    
+}
+
+.card-body {
+    position: relative;
+    left: -10px;
+}
+
+/* ,  */
