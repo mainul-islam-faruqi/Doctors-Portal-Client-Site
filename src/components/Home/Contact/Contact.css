@@ -1,0 +1,47 @@
+.contact{
+    background-image: url(../../../images/appointmentBg.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    height: 600px;
+    padding-top: 60px;
+}
+
+
+.contact::before{
+    content: " ";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-color:  #242949;
+    opacity: .8; 
+    z-index: -1;
+}
+
+.form{
+    width: 60%;
+    margin: auto;
+}
+
+.form > input {
+    width: 100%;
+    height: 60px;
+    border: none;
+    margin: 10px 0; 
+    padding: 0 10px 0 20px;
+    border-radius: 5px;
+}
+
+#button{
+    background-image: linear-gradient(70deg, #1bd49c, #20ceda);
+    border: none;
+    border-color: none;
+    color: white;
+    font-weight: 600;
+    padding: 8px 25px;
+    border-radius: 3px;
+    width: 200px;
+    height: 50px;
+}
