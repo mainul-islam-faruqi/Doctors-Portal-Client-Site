@@ -3,7 +3,7 @@ import './Blog.css'
 import BlogPost from '../BlogPost/BlogPost';
 import wilson from '../../../images/wilson.png';
 import ema from '../../../images/ema.png';
-import aliza from '../../../images/aliza.png';
+// import aliza from '../../../images/aliza.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
 
