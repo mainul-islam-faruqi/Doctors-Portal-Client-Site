@@ -1,6 +1,6 @@
 import React from 'react';
-
 import Modal from 'react-modal';
+import { useForm } from "react-hook-form";
 
 const customStyles = {
     content: {
@@ -15,9 +15,10 @@ const customStyles = {
 
 Modal.setAppElement('#root')
 
-const AppointmentForm = ({modalIsOpen, closeModal}) => {
+const AppointmentForm = ({ modalIsOpen, closeModal, appointmentSub }) => {
 
-    
+    const { register, handleSubmit, watch, errors } = useForm();
+    const onSubmit = data => console.log(data);
     return (
         <div>
             <Modal
@@ -28,16 +29,19 @@ const AppointmentForm = ({modalIsOpen, closeModal}) => {
                 contentLabel="Example Modal"
             >
 
-                <h2 >Hello</h2>
-                <button onClick={closeModal}>close</button>
-                <div>I am a modal</div>
-                <form>
-                    <input />
-                    <button>tab navigation</button>
-                    <button>stays</button>
-                    <button>inside</button>
-                    <button>the modal</button>
+                <h2 className="text-brand text-center" > {appointmentSub} </h2>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    {/* register your input into the hook by invoking the "register" function */}
+                    <input name="example" defaultValue="test" ref={register} />
+
+                    {/* include validation with required or other standard HTML validation rules */}
+                    <input name="exampleRequired" ref={register({ required: true })} />
+                    {/* errors will return when field validation fails  */}
+                    {errors.exampleRequired && <span>This field is required</span>}
+
+                    <input type="submit" />
                 </form>
+
             </Modal>
         </div>
     );
