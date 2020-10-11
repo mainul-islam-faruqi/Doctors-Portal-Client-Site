@@ -43,10 +43,10 @@ const Footer = () => {
                     <FooterCol key={2} menuTitle="Services" menuItems={services} />
                     <FooterCol key={3} menuTitle="Oral Health" menuItems={oralHealth} />
                     <FooterCol key={4} menuTitle="Our Address" menuItems={ourAddress}>
-                        <ul class=" social-media list-inline">
-                            <li class="list-inline-item" > <a href="//facebook.com"> <FontAwesomeIcon className="icon active-icon" icon={faFacebookF}/> </a></li>
-                            <li class="list-inline-item"> <a href="//google.com"> <FontAwesomeIcon className="icon" icon={faGooglePlusG}/> </a></li>
-                            <li class="list-inline-item"> <a href="//instagram.com"> <FontAwesomeIcon className="icon " icon={faInstagram}/> </a></li>
+                        <ul className=" social-media list-inline">
+                            <li className="list-inline-item" > <a href="//facebook.com"> <FontAwesomeIcon className="icon active-icon" icon={faFacebookF}/> </a></li>
+                            <li className="list-inline-item"> <a href="//google.com"> <FontAwesomeIcon className="icon" icon={faGooglePlusG}/> </a></li>
+                            <li className="list-inline-item"> <a href="//instagram.com"> <FontAwesomeIcon className="icon " icon={faInstagram}/> </a></li>
                         </ul>
                         <div className="mt-4">
                             <h6> Call Now </h6>

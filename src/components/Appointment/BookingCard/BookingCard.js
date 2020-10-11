@@ -14,16 +14,16 @@ const BookingCard = ({booking, date}) => {
     }
 
     return (
-        <div class="col-sm-6 col-md-4 mb-4">
-            <div class="card p-3" style={{boxShadow:"1px 1px 12px  #eaeaea", border: "none" ,padding: '10px 0'}}>
-                <div class="card-body text-center">
-                    <h5 class="card-title text-brand"> {booking.subject} </h5>
-                    <h6 class="card-title"> {booking.visitingHour} </h6>
-                    <p class="card-text text-muted "> {booking.totalSpace} SPACES AVAILABLE  </p>
+        <div className="col-sm-6 col-md-6 col-lg-4 mb-4">
+            <div className="card p-3" style={{boxShadow:"1px 1px 12px  #eaeaea", border: "none" ,padding: '10px 0'}}>
+                <div className="card-body text-center">
+                    <h5 className="card-title text-brand"> {booking.subject} </h5>
+                    <h6 className="card-title"> {booking.visitingHour} </h6>
+                    <p className="card-text text-muted "> {booking.totalSpace} SPACES AVAILABLE  </p>
                     <button onClick={openModal} className="button-primary">
                         BOOK APPOINTMENT
                     </button>
-                    <AppointmentForm  modalIsOpen={modalIsOpen} appointmentSub={booking.subject} closeModal={closeModal} />
+                    <AppointmentForm  modalIsOpen={modalIsOpen} closeModal={closeModal} appointmentSub={booking.subject} date={date} />
                 </div>
             </div>
         </div>
