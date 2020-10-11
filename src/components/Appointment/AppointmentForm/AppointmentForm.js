@@ -15,28 +15,14 @@ const customStyles = {
 
 Modal.setAppElement('#root')
 
-const AppointmentForm = () => {
+const AppointmentForm = ({modalIsOpen, closeModal}) => {
 
-    const [modalIsOpen, setIsOpen] = React.useState(false);
-    function openModal() {
-        setIsOpen(true);
-    }
-
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        // subtitle.style.color = '#f00';
-    }
-
-    function closeModal() {
-        setIsOpen(false);
-    }
-
+    
     return (
         <div>
-            <button onClick={openModal}>Open Modal</button>
             <Modal
                 isOpen={modalIsOpen}
-                onAfterOpen={afterOpenModal}
+                // onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
                 style={customStyles}
                 contentLabel="Example Modal"

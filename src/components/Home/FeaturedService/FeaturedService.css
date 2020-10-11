@@ -15,5 +15,5 @@
     font-weight: 600;
     padding: 8px 25px;
     border-radius: 3px;
-
+    outline: 0 !important;
 }
