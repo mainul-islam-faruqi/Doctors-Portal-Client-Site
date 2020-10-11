@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Appointment from './components/Appointment/Appointment/Appointment';
+import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import Home from './components/Home/Home/Home';
 
 function App() {
@@ -13,12 +14,18 @@ function App() {
     <div className="App ">
      <Router>
        <Switch>
+       <Route path="/appointment">
+           <Appointment/>
+         </Route>
+
+         <Route path="/dashboard/appointment">
+           <Dashboard/>
+         </Route>
+
          <Route exact path="/">
             <Home />
          </Route>
-         <Route path="/appointment">
-           <Appointment/>
-         </Route>
+         
        </Switch>
      </Router>
     </div>
