@@ -1,4 +1,5 @@
 import React from 'react';
+import AppointmentForm from '../AppointmentForm/AppointmentForm';
 
 const BookingCard = ({booking, date}) => {
     return (
@@ -11,6 +12,7 @@ const BookingCard = ({booking, date}) => {
                     <button className="button-primary">
                         BOOK APPOINTMENT
                     </button>
+                    <AppointmentForm/>
                 </div>
             </div>
         </div>
