@@ -1,0 +1,13 @@
+.model-form{
+    width: 600px;
+    padding: 3rem 2rem;
+}
+
+.ReactModal__Overlay{
+    background-color: #0000008f !important;
+}
+
+.ReactModal__Content{
+    border: none !important;
+    border-radius: 20px !important;
+}

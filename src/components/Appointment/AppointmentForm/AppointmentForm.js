@@ -1,4 +1,5 @@
 import React from 'react';
+import './AppointmentForm.css'
 import Modal from 'react-modal';
 import { useForm } from "react-hook-form";
 
@@ -29,17 +30,19 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentSub }) => {
                 contentLabel="Example Modal"
             >
 
-                <h2 className="text-brand text-center" > {appointmentSub} </h2>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    {/* register your input into the hook by invoking the "register" function */}
-                    <input name="example" defaultValue="test" ref={register} />
+                <h2 className="text-brand text-center mt-3" > {appointmentSub} </h2>
+                <form className="model-form" onSubmit={handleSubmit(onSubmit)} >
+                    <select class="form-control form-control-lg mt-2">
+                        <option>Large select</option>
+                    </select>
+                    <input class="form-control form-control-lg  mt-2" type="text" placeholder=".form-control-lg" />
+                    <input class="form-control form-control-lg  mt-2" type="text" placeholder=".form-control-lg" />
+                    <input class="form-control form-control-lg mt-2" type="text" placeholder=".form-control-lg" />
+                    <input class="form-control form-control-lg  mt-2 mb-3" type="text" placeholder=".form-control-lg" />
 
-                    {/* include validation with required or other standard HTML validation rules */}
-                    <input name="exampleRequired" ref={register({ required: true })} />
-                    {/* errors will return when field validation fails  */}
                     {errors.exampleRequired && <span>This field is required</span>}
 
-                    <input type="submit" />
+                    <input className="button-primary d-flex justify-content-end" type="submit" />
                 </form>
 
             </Modal>
