@@ -7,8 +7,8 @@
     width: 90%;
 }
 
-button{
-    background-image: linear-gradient(70deg, #1bd49c, #20ceda);
+.button-primary{
+    background-image: linear-gradient(75deg, #19D3AE, #0fcfec);
     border: none;
     border-color: none;
     color: white;

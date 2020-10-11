@@ -15,7 +15,7 @@ const MakeAppointment = () => {
                         <p style={{color: "#1CC7C1", fontWeight: "700"}}> APPOINTMENT </p>
                         <h1> Make an appoinment <br/> Today </h1>
                         <p className="mt-3 mb-5"> It is a long extablished dact that a reader will be distracted by the readable content of a page when looking at its</p>
-                        <button> Learn More </button>
+                        <button className="button-primary"> Learn More </button>
                     </div>
                 </div>
             </div>

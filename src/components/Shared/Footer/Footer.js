@@ -39,7 +39,7 @@ const Footer = () => {
         <footer className="footer-area clear-both">
             <div className="container">
                 <div className="row mb-5">
-                    <FooterCol key={1} menuTitle={" ."} menuItems={noNamed} />
+                    <FooterCol key={1} menuTitle={""} menuItems={noNamed} />
                     <FooterCol key={2} menuTitle="Services" menuItems={services} />
                     <FooterCol key={3} menuTitle="Oral Health" menuItems={oralHealth} />
                     <FooterCol key={4} menuTitle="Our Address" menuItems={ourAddress}>
@@ -50,7 +50,7 @@ const Footer = () => {
                         </ul>
                         <div className="mt-4">
                             <h6> Call Now </h6>
-                            <button > +2025550295</button>
+                            <button className="button-primary" > +2025550295</button>
                         </div>
                     </FooterCol>
                 </div>
