@@ -19,7 +19,13 @@ const AddDoctor = () => {
         formData.append('name', info.name);
         formData.append('email', info.email);
 
-        
+        fetch('http://localhost:5000/addDoctor', {
+            method:'POST',
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
     }
 
     
@@ -29,7 +35,7 @@ const AddDoctor = () => {
             <div className="col-md-10">
                 <h5> Add a Doctor </h5>
 
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div class="form-group">
                         <label for="formGroupExampleInput">  Email  </label>
                         <input onChange={handleChange} type="email" class="form-control" name="email" placeholder="Email "/>
