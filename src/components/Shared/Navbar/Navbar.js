@@ -23,13 +23,13 @@ const Navbar = () => {
                     </li>
 
                     <li className="nav-item">
-                        <Link className="nav-link mr-5 text-white" to="#">Reviews</Link>
+                        <Link className={`nav-link mr-5 font-weight-bold ${window.location.pathname === '/appointment'? 'ext-dark': "text-white"}`} to="#">Reviews</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link mr-5 text-white" to="#">Blog</Link>
+                        <Link className={`nav-link mr-5 font-weight-bold ${window.location.pathname === '/appointment'? 'ext-dark': "text-white"}`} to="#">Blog</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link mr-5 text-white" to="#">Contact Us</Link>
+                        <Link className={`nav-link mr-5 font-weight-bold ${window.location.pathname === '/appointment'? 'ext-dark': "text-white"}`} to="#">Contact Us</Link>
                     </li>
                    
                    

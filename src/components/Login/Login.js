@@ -24,6 +24,8 @@ const Login = () => {
             const { displayName, email } = result.user;
             const signedInUser = { name: displayName, email }
             setLoggedInUser(signedInUser);
+            storeAuthToken();
+            console.log(loggedInUser)
         }).catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
