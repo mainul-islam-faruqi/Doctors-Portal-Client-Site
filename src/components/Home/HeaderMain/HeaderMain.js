@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import chair from '../../../images/chair.png';
 const HeaderMain = () => {
     return (
@@ -10,7 +11,7 @@ const HeaderMain = () => {
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel accusantium possimus doloremque deleniti consequatur magni?
 
                     </p>
-                    <button className='button-primary'>GET APOINTMENT</button>
+                  <Link to="/appointment" className='button-primary' > GET APOINTMENT </Link> 
                 </div>
                
                     <img  className="col col-sm-12 col-md-6 col-lg-6 col-xl-4 " src={chair} alt=""/>
