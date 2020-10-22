@@ -6,7 +6,7 @@ const HeaderMain = () => {
         <main  className=''>
             <div style={{height:"600px"}} className="row  d-flex align-items-center justify-content-center ">
                 <div className="col col-sm-12 col-md-4 col-lg-4 col-xl-4  offset-md-1">
-                    <h1 style={{color: "#3A4256"}}> Your New Smile <br/> Starts Here </h1>
+                    <h1 style={{color: ""}}> Your New Smile <br/> Starts Here </h1>
                     <p className="text-secondary">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel accusantium possimus doloremque deleniti consequatur magni?
 

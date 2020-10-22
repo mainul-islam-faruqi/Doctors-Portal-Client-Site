@@ -12,14 +12,20 @@ const Sidebar = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/isDoctor', {
+        loggedInUser.email && fetch('http://localhost:5000/isDoctor', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
         })
             .then(res => res.json())
-            .then(data => setIsDoctor(data));
-    }, [])
+            .then(data => {
+            
+                
+                setIsDoctor(data)});
+    }, [loggedInUser.email])
+   
+    console.log(loggedInUser)
+
     return (
         <div className="sidebar  py-5 px-4" style={{ height: "100vh" }}  >
             <ul className="list-unstyled">
@@ -38,7 +44,7 @@ const Sidebar = () => {
 
 
                 {isDoctor &&
-                    <div>
+                    <div className="doctors-container">
 
                         <li>
                             <Link className="text-white"  to="/allPatients">

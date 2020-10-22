@@ -12,10 +12,30 @@ import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 
+import jwt_decode from "jwt-decode"
+import { useEffect } from 'react';
+
 export const UserContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+
+
+
+useEffect(()=> {
+
+    const token = sessionStorage.getItem('token');
+    if(token){
+      const decodedToken = jwt_decode(token);
+      // console.log(decodedToken.email);
+      setLoggedInUser({...loggedInUser,email:decodedToken.email});
+    }
+    
+
+},[])
+
+
+
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]} >
       <Router>
