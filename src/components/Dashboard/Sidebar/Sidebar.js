@@ -21,16 +21,16 @@ const Sidebar = () => {
             .then(data => setIsDoctor(data));
     }, [])
     return (
-        <div className="sidebar d-flex justify-content-between col-md-2 py-5 px-4" style={{ height: "100vh" }}  >
+        <div className="sidebar  py-5 px-4" style={{ height: "100vh" }}  >
             <ul className="list-unstyled">
                 <li>
-                    <Link to="/dashboard">
-                        <FontAwesomeIcon icon={faGripHorizontal} /> <span> Dashboard </span>
+                    <Link className="text-white" to="/dashboard">
+                        <FontAwesomeIcon icon={faGripHorizontal} /> <span > Dashboard </span>
                     </Link>
                 </li>
 
                 <li>
-                    <Link to="/">
+                    <Link className="text-white" to="/">
                         <FontAwesomeIcon icon={faHome} /> <span> Home </span>
                     </Link>
                 </li>
@@ -41,31 +41,31 @@ const Sidebar = () => {
                     <div>
 
                         <li>
-                            <Link to="/allPatients">
+                            <Link className="text-white"  to="/allPatients">
                                 <FontAwesomeIcon icon={faCalendar} /> <span> Appointments </span>
                             </Link>
                         </li>
 
                         <li>
-                            <Link to="/patient">
+                            <Link className="text-white" to="/patient">
                                 <FontAwesomeIcon icon={faUsers} /> <span> Patients </span>
                             </Link>
                         </li>
 
                         <li>
-                            <Link to="/prescription">
+                            <Link className="text-white" to="/prescription">
                                 <FontAwesomeIcon icon={faFileAlt} /> <span> prescriptions </span>
                             </Link>
                         </li>
 
                         <li>
-                            <Link to="/addDoctor">
+                            <Link className="text-white" to="/addDoctor">
                                 <FontAwesomeIcon icon={faUserPlus} /> <span> Add Doctor </span>
                             </Link>
                         </li>
 
                         <li>
-                            <Link to="/doctor/setting">
+                            <Link className="text-white" to="/doctor/setting">
                                 <FontAwesomeIcon icon={faCog} /> <span> Settings  </span>
                             </Link>
                         </li>
@@ -74,9 +74,9 @@ const Sidebar = () => {
 
             </ul>
 
-            <div>
-                <Link to="/" className="">
-                    <FontAwesomeIcon icon={faSignOutAlt} /> <span> Logout </span>
+            <div >
+                <Link className="text-white logout"  to="/" >
+                    <FontAwesomeIcon icon={faSignOutAlt} /> <span> Log Out </span>
                 </Link>
             </div>
         </div>

@@ -1,0 +1,22 @@
+.sidebar{
+    background-image: linear-gradient(180deg, #19D3AE, #0fcfec  );
+    max-width: 20rem;
+}
+
+.sidebar > ul > li {
+    margin: 15px 0 ;
+}
+
+.svg-inline--fa{
+    margin-right: 10px;
+}
+
+.sidebar > ul > li > .fa-sign-out-alt{
+    position: absolute;
+
+}
+
+.logout{
+    position: absolute;
+    bottom: 50px;
+}

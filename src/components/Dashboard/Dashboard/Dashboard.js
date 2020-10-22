@@ -14,6 +14,8 @@ const Dashboard = () => {
        
     }
 
+    console.log(loggedInUser)
+
     useEffect( () => {
         fetch('http://localhost:5000/appointmentsByDate', {
             method: 'POST',
@@ -28,11 +30,11 @@ const Dashboard = () => {
 
     return (
         <main>
-            <div className="container-fluid row">
-                <div className="col-md-2">
+            <div className="row">
+                <div className="col-md-3">
                     <Sidebar/>
                 </div>
-                <div className="col-md-5">
+                <div className="col-md-4">
                     <div className="react-calendar-custom">
                         <Calendar
                             onChange={handleDateChange}

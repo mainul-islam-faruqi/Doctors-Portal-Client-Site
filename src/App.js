@@ -24,13 +24,13 @@ function App() {
            <Appointment/>
          </Route>
 
-         <Route path="/dashboard">
+         <PrivateRoute path="/dashboard">
            <Dashboard/>
-         </Route>
+         </PrivateRoute>
 
-         <Route path="/addDoctor">
+         <PrivateRoute path="/addDoctor">
            <AddDoctor />
-         </Route>
+         </PrivateRoute>
 
          <Route path="/login">
            <Login/>
