@@ -21,23 +21,23 @@ const Dashboard = () => {
         loggedInUser.email && fetch('http://localhost:5000/appointmentsByDate', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
-            body: JSON.stringify({ date: selectedDate, email: loggedInUser.email })
+            body: JSON.stringify({ date: selectedDate.toDateString(), email: loggedInUser.email })
         })
             .then(res => res.json())
-            .then(appointments => {
-                setAppointments(appointments)
+            .then(data => {
+                console.log(data)
+                setAppointments(data)
             })
-    }, [loggedInUser.email])
+    }, [selectedDate,loggedInUser.email])
 
-    console.log(loggedInUser)
 
     return (
         <main>
             <div className="row">
-                <div className="col-md-3">
+                <div className="col-md-3" style={{paddingRight: "0px"}} >
                     <Sidebar />
                 </div>
-                <div className="col-md-9">
+                <div className="col-md-9 dashboard-container">
                 <div className="header"> <h3> Appointments </h3> </div>
                     <div className="row">
                         
@@ -45,7 +45,7 @@ const Dashboard = () => {
                             <div className="react-calendar-custom">
                                 <Calendar
                                     onChange={handleDateChange}
-                                    value={new Date()}
+                                    value={selectedDate}
                                     className="calendar"
                                 />
                             </div>

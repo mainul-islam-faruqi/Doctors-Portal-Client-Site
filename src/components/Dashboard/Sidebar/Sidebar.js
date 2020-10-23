@@ -24,7 +24,6 @@ const Sidebar = () => {
                 setIsDoctor(data)});
     }, [loggedInUser.email])
    
-    console.log(loggedInUser)
 
     return (
         <div className="sidebar  py-5 px-4" style={{ height: "100vh" }}  >

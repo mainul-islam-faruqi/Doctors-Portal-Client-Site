@@ -18,10 +18,12 @@ Modal.setAppElement('#root')
 
 const AppointmentForm = ({ modalIsOpen, closeModal, appointmentSub, date }) => {
 
+    
+
     const { register, handleSubmit, watch, errors } = useForm();
     const onSubmit = data => {
         data.service = appointmentSub;
-        data.date = date;
+        data.date = date.toDateString();
         data.created = new Date();
 
         fetch('http://localhost:5000/addAppointment', {
