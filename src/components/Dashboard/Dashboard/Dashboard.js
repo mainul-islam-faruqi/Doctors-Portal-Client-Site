@@ -34,10 +34,10 @@ const Dashboard = () => {
     return (
         <main>
             <div className="row">
-                <div className="col-md-3" style={{paddingRight: "0px"}} >
+                <div className="col-md-2" style={{paddingRight: "0px"}} >
                     <Sidebar />
                 </div>
-                <div className="col-md-9 dashboard-container">
+                <div className="col-md-10 dashboard-container">
                 <div className="header"> <h3> Appointments </h3> </div>
                     <div className="row">
                         
@@ -51,8 +51,8 @@ const Dashboard = () => {
                             </div>
                         </div>
 
-                        <div className="col-md-6">
-                            <AppointmentByDate appointments={appointments} />
+                        <div className="col-md-6" >
+                            <AppointmentByDate appointments={appointments} selectedDate={selectedDate} />
                         </div>
                     </div>
                 </div>

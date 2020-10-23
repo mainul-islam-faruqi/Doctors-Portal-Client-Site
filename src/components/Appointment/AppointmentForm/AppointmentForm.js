@@ -16,13 +16,14 @@ const customStyles = {
 
 Modal.setAppElement('#root')
 
-const AppointmentForm = ({ modalIsOpen, closeModal, appointmentSub, date }) => {
+const AppointmentForm = ({ modalIsOpen, closeModal, appointmentSub,schedule, date }) => {
 
     
 
     const { register, handleSubmit, watch, errors } = useForm();
     const onSubmit = data => {
         data.service = appointmentSub;
+        data.schedule = schedule;
         data.date = date.toDateString();
         data.created = new Date();
 

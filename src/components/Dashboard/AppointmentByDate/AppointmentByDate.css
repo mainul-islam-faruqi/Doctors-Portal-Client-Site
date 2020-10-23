@@ -1,0 +1,23 @@
+.appointmentByDate{
+    background-color: white;
+    padding: 20px;
+    min-height: 512px;
+    box-shadow: 1px 2px 80px #f0f0f0;
+}
+
+th{
+    color: #b1b1b1 ;
+}
+
+td{
+    font-weight: bold;
+}
+
+.select{
+    background-color: #0fcfe7;
+    color: white;
+    border: none;
+    padding: 3px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}

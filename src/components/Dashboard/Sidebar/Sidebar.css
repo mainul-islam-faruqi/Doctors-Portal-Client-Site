@@ -1,6 +1,5 @@
 .sidebar{
     background-image: linear-gradient(180deg, #18d2af, #0fcfe7  );
-    max-width: 20rem;
 }
 
 .sidebar > ul > li {

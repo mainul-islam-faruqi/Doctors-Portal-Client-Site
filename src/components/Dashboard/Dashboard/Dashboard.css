@@ -1,5 +1,7 @@
 .dashboard-container{
     background-color: #f4fdfb;
+    padding-left: 25px;
+    padding-right: 35px;
 }
 
 .header{
