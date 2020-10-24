@@ -106,15 +106,27 @@ const Dashboard = () => {
                 <tbody>
 
                     {
-                        appointments.map(appointment =>
+                        appointments.map((appointment, index) =>
                             <tr key={appointment._id}>
-                                <td> {appointment.name} </td>
+                                <td> {index + 1} </td>
+                                <td>  {selectedDate.toDateString()} </td>
                                 <td> {appointment.schedule} </td>
+                                <td> {appointment.name} </td>
+                                <td> {appointment.phone} </td>
+                                <td>
+                                    <select className=" select" id="validationTooltip04" required>
+                                        <option selected disabled value=""> Not Added</option>
+                                        <option> View </option>
+                                    </select>
+                                </td>
 
-                                <select className=" select" id="validationTooltip04" required>
-                                    <option selected disabled value=""> Not visited</option>
-                                    <option>visited</option>
-                                </select>
+                                <td>
+                                    <select className=" select" id="validationTooltip04" required>
+                                        <option selected disabled value=""> Pending </option>
+                                        <option> Approved </option>
+                                        <option> Canceled </option>
+                                    </select>
+                                </td>
                             </tr>
                         )
                     }

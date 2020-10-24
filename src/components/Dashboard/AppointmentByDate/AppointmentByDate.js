@@ -22,17 +22,7 @@ const AppointmentByDate = ({ appointments, selectedDate }) => {
                 <tbody>
 
                     {
-                        appointments.map(appointment =>
-                            <tr key={appointment._id}>
-                                <td> {appointment.name} </td>
-                                <td> {appointment.schedule} </td>
-
-                                <select className=" select" id="validationTooltip04" required>
-                                    <option selected disabled value=""> Not visited</option>
-                                    <option>visited</option>
-                                </select>
-                            </tr>
-                        )
+                        appointments.map(appointment =><tr key={appointment._id}><td>{appointment.name}</td><td> {appointment.schedule}</td><select className=" select" id="validationTooltip04" required><option selected disabled value=""> Not visited</option><option>visited</option></select></tr>)
                     }
 
                 </tbody>
