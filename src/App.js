@@ -7,13 +7,14 @@ import {
 import './App.css';
 import AddDoctor from './components/AddDoctor/AddDoctor';
 import Appointment from './components/Appointment/Appointment/Appointment';
-import Dashboard from './components/Dashboard/Dashboard/Dashboard';
+import DashboardAppointment from './components/Dashboard/DashboardAppointment/DashboardAppointment';
 import Home from './components/Home/Home/Home';
 import Login from './components/Login/Login';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 
 import jwt_decode from "jwt-decode"
 import { useEffect } from 'react';
+import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 
 export const UserContext = createContext();
 
@@ -44,8 +45,12 @@ useEffect(()=> {
            <Appointment/>
          </Route>
 
-         <PrivateRoute path="/dashboard">
+         <Route path="/dashboard">
            <Dashboard/>
+         </Route>
+
+         <PrivateRoute path="/dashboard-appointment">
+           <DashboardAppointment/>
          </PrivateRoute>
 
          <PrivateRoute path="/addDoctor">

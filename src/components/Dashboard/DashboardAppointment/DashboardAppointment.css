@@ -1,0 +1,10 @@
+.dashboard-container{
+    background-color: #f4fdfb;
+    padding-left: 25px;
+    padding-right: 35px;
+}
+
+.header{
+    height: 80px;
+    padding: 20px 0;
+}
