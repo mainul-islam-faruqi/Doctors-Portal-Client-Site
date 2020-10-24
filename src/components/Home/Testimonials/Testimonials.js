@@ -32,7 +32,7 @@ const Testimonials = () => {
     return (
         <section className="testimonials m-5 pt-5 pl-3 pr-3 ">
             <div className="">
-                <div className="section-header d-flex justify-content-between align-items-center">
+                <div className="section-header  d-flex justify-content-between align-items-center">
                     <div className="tesitimonial-text">
                         <p style={{color: "#1CC7C1", fontWeight: "700"}}> APPOINTMENT </p>
                         <h1> What's Our Patients <br/> say </h1>

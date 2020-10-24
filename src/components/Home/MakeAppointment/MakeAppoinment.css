@@ -22,3 +22,12 @@
     height: 550px;
     transform: translateY(-130px);
 }
+
+@media only screen and (max-width:768px){
+    .make-appointment{
+        min-height: 420px;
+    }
+    .make-appointment .appointmentImg {
+        display: none;
+    }
+}

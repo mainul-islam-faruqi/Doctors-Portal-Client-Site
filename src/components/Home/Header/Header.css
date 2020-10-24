@@ -19,3 +19,10 @@
     background-color: #3A4256; 
     z-index: -1;
 }
+
+
+@media only screen and (max-width: 768px){
+    .header-container{
+        min-height: 920px;
+    }
+}
