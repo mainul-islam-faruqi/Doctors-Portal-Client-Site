@@ -36,7 +36,7 @@ const Sidebar = () => {
                 </li>
 
                 <li>
-                    <Link className="text-white" to="/allPatients">
+                    <Link className="text-white" to="/dashboard-appointment">
                         <FontAwesomeIcon icon={faCalendar} /> <span> Appointments </span>
                     </Link>
                 </li>

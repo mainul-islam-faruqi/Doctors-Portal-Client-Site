@@ -25,3 +25,45 @@
 .total-patients{
     background-color: orange;
 }
+
+
+
+
+.select-main-container{
+    position: relative;
+}
+
+
+
+.select-container select{
+    background-color:#76c5ff;
+    border-right: 2px solid #fff;
+    margin: 0;
+    width: 140px;
+    height: 35px;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+    -webkit-appearance: button;
+    color: white;
+}
+
+.create-icon{
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 50px;
+    height: 35px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #ffd076;
+    pointer-events: none;
+    border-left: 2px solid  #fff;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+

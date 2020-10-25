@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import './Dashboard.css';
 import Sidebar from '../Sidebar/Sidebar';
 import { UserContext } from '../../../App';
+import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
 
 const Dashboard = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -82,56 +83,64 @@ const Dashboard = () => {
 
                     <div className="appointmentByDate mt-5 ml-2">
 
-            <div className="appointmentByDate-header pb-5 d-flex justify-content-between">
-                <h6 className="text-brand font-weight-bold" > Recent Appointments</h6>
+                        <div className="appointmentByDate-header pb-5 d-flex justify-content-between">
+                            <h6 className="text-brand font-weight-bold" > Recent Appointments</h6>
 
-                <h6 className="text-secondary font-weight-bold" > {selectedDate.toDateString()}  </h6>
-            </div>
+                            <h6 className="text-secondary font-weight-bold" > {selectedDate.toDateString()}  </h6>
+                        </div>
 
-            <table className="table table-borderless">
-                <thead>
-                    <tr>
-                        <th scope="col"> Sr. No  </th>
-                        <th scope="col"> Date  </th>
-                        <th scope="col"> Time  </th>
-                        <th scope="col"> Name  </th>
-                        <th scope="col"> Contact  </th>
-                        <th scope="col"> Prescription  </th>
-                        <th scope="col"> Action </th>
-                    </tr>
-                </thead>
-                <tbody>
+                        <table className="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col"> Sr. No  </th>
+                                    <th scope="col"> Date  </th>
+                                    <th scope="col"> Time  </th>
+                                    <th scope="col"> Name  </th>
+                                    <th scope="col"> Contact  </th>
+                                    <th scope="col"> Prescription  </th>
+                                    <th scope="col"> Action </th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-                    {
-                        appointments.map((appointment, index) =>
-                            <tr key={appointment._id}>
-                                <td> {index + 1} </td>
-                                <td>  {selectedDate.toDateString()} </td>
-                                <td> {appointment.schedule} </td>
-                                <td> {appointment.name} </td>
-                                <td> {appointment.phone} </td>
-                                <td>
-                                    <select className=" select" id="validationTooltip04" required>
-                                        <option selected disabled value=""> Not Added</option>
-                                        <option> View </option>
-                                    </select>
-                                </td>
+                                {
+                                    appointments.map((appointment, index) =>
+                                        <tr key={appointment._id}>
+                                            <td> {index + 1} </td>
+                                            <td>  {selectedDate.toDateString()} </td>
+                                            <td> {appointment.schedule} </td>
+                                            <td> {appointment.name} </td>
+                                            <td> {appointment.phone} </td>
+                                            <td>
+                                                <div className="button-primary">
+                                                    view
+                                                </div>
+                                            </td>
 
-                                <td>
-                                    <select className=" select" id="validationTooltip04" required>
-                                        <option selected disabled value=""> Pending </option>
-                                        <option> Approved </option>
-                                        <option> Canceled </option>
-                                    </select>
-                                </td>
-                            </tr>
-                        )
-                    }
+                                            <td>
+                                                <div className="select-main-container">
+                                                    <div className="select-container">
+                                                        <select className="select" id="validationTooltip04" required>
+                                                            <option selected value=""> Pending </option>
+                                                            <option> Approved </option>
+                                                            <option> Canceled </option>
+                                                        </select>
+                                                        <div className="create-icon">
+                                                            <CreateOutlinedIcon />
+                                                        </div>
 
-                </tbody>
-            </table>
+                                                    </div>
+                                                </div>
 
-        </div>
+                                            </td>
+                                        </tr>
+                                    )
+                                }
+
+                            </tbody>
+                        </table>
+
+                    </div>
 
                 </div>
             </div>
