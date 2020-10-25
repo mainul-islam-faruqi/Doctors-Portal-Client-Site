@@ -39,7 +39,7 @@ const DashboardAppointmentTable = ({ appointment, date, idx }) => {
                     <div className="select-main-container">
                         <div className="select-container">
                             <select className={`select select-${action}`} id="validationTooltip04" onChange={onChangeActionHandler} required>
-                                <option selected value=""> Pending </option>
+                                <option selected > Pending </option>
                                 <option> Approved </option>
                                 <option> Canceled </option>
                             </select>
@@ -54,7 +54,7 @@ const DashboardAppointmentTable = ({ appointment, date, idx }) => {
                     <div className="select-main-container">
                         <div className="select-container">
                             <select className={`select select-${action}`} id="validationTooltip04" onChange={onChangeActionHandler} required>
-                                <option value=""> Pending </option>
+                                <option > Pending </option>
                                 <option selected> Approved </option>
                                 <option> Canceled </option>
                             </select>
@@ -69,7 +69,7 @@ const DashboardAppointmentTable = ({ appointment, date, idx }) => {
                     <div className="select-main-container">
                         <div className="select-container">
                             <select className={`select select-${action}`}  id="validationTooltip04" onChange={onChangeActionHandler} required>
-                                <option value=""> Pending </option>
+                                <option > Pending </option>
                                 <option > Approved </option>
                                 <option selected> Canceled </option>
                             </select>
