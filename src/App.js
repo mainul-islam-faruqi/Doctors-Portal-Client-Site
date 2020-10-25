@@ -21,8 +21,6 @@ export const UserContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
 
-
-
 useEffect(()=> {
 
     const token = sessionStorage.getItem('token');
@@ -34,7 +32,6 @@ useEffect(()=> {
     
 
 },[])
-
 
 
   return (

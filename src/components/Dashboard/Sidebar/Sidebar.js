@@ -7,9 +7,6 @@ import { UserContext } from '../../../App';
 
 const Sidebar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const [isDoctor, setIsDoctor] = useState(false);
-
-
 
     useEffect(() => {
         loggedInUser.email && fetch('http://localhost:5000/isDoctor', {
@@ -19,11 +16,9 @@ const Sidebar = () => {
         })
             .then(res => res.json())
             .then(data => {
-            
-                
-                setIsDoctor(data)});
+                setLoggedInUser({...loggedInUser, isDoctor: true})
+            });
     }, [loggedInUser.email])
-   
 
     return (
         <div className="sidebar  py-5 px-4" style={{ height: "100vh" }}  >
@@ -40,16 +35,16 @@ const Sidebar = () => {
                     </Link>
                 </li>
 
+                <li>
+                    <Link className="text-white" to="/allPatients">
+                        <FontAwesomeIcon icon={faCalendar} /> <span> Appointments </span>
+                    </Link>
+                </li>
 
-
-                {isDoctor &&
+                {loggedInUser.isDoctor &&
                     <div className="doctors-container">
 
-                        <li>
-                            <Link className="text-white"  to="/allPatients">
-                                <FontAwesomeIcon icon={faCalendar} /> <span> Appointments </span>
-                            </Link>
-                        </li>
+
 
                         <li>
                             <Link className="text-white" to="/patient">
@@ -80,7 +75,7 @@ const Sidebar = () => {
             </ul>
 
             <div >
-                <Link className="text-white logout"  to="/" >
+                <Link className="text-white logout" to="/" >
                     <FontAwesomeIcon icon={faSignOutAlt} /> <span> Log Out </span>
                 </Link>
             </div>

@@ -32,7 +32,6 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentSub,schedule, dat
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => {
         data.service = appointmentSub;
-        data.schedule = schedule;
         data.date = date.toDateString();
         data.created = new Date();
         data.action = "pending";
@@ -78,7 +77,7 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentSub,schedule, dat
                     {errors.email && <span className="text-danger"> This field is required </span>}
 
                     <div className="form-group">
-                        <select className="form-control" name="date" ref={register({ required: true })} >
+                        <select className="form-control" name="schedule" ref={register({ required: true })} >
                             <option disabled={true} value="Not Selected">Select Time</option>
                             <option value="8:00 AM - 9:00 PM">8:00 AM - 9:00 PM</option>
                             <option value="10:00 AM - 1:00 PM">10:00 AM - 1:00 PM</option>
@@ -92,7 +91,7 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentSub,schedule, dat
 
                     <div className="row">
                         <div className="col-md-4">
-                            <select ref={register}  className="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                            <select ref={register}  name="gender" className="custom-select mr-sm-2" id="inlineFormCustomSelect">
                                 <option ref={register}  value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="not set"> other </option>

@@ -12,21 +12,18 @@ const Dashboard = () => {
         setSelectedDate(date);
 
     }
-
-  
-
     useEffect(() => {
-        loggedInUser.email && fetch('http://localhost:5000/appointmentsByDate', {
+        loggedInUser.email && fetch('http://localhost:5000/get-todays-appointment', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
-            body: JSON.stringify({ date: selectedDate.toDateString(), email: loggedInUser.email })
+            body: JSON.stringify({ date: selectedDate.toDateString() })
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 setAppointments(data)
             })
-    }, [selectedDate,loggedInUser.email])
+    }, [])
 
     return (
         <main>
