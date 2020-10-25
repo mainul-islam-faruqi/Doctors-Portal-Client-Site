@@ -26,9 +26,37 @@
     background-color: orange;
 }
 
+.appointment-list{
+    border-radius: 10px;
+}
+
+
+.MuiFormControl-root{
+    border: 2px solid #ddd !important;
+}
+
+.MuiInputBase-root::before{
+    border: none !important;
+}
+
+.MuiInputBase-input{
+    width: 100px !important;
+    padding-left: 5px !important;
+    color: #adadad!important;
+}
 
 
 
+.MuiButtonBase-root{
+    outline-width: 0 !important;
+}
+
+.MuiSvgIcon-root{
+    color: #adadad;
+}
+
+
+/*  select dropdown  */
 .select-main-container{
     position: relative;
 }

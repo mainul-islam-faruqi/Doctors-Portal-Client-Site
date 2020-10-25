@@ -22,7 +22,7 @@ const Sidebar = () => {
 
     return (
         <div className="sidebar  py-5 px-4" style={{ height: "100vh" }}  >
-            <ul className="list-unstyled">
+            <ul className="list-unstyled pl-xl-3">
                 <li>
                     <Link className="text-white" to="/dashboard">
                         <FontAwesomeIcon icon={faGripHorizontal} /> <span > Dashboard </span>
@@ -75,7 +75,7 @@ const Sidebar = () => {
             </ul>
 
             <div >
-                <Link className="text-white logout" to="/" >
+                <Link className="text-white logout pl-xl-3" to="/" >
                     <FontAwesomeIcon icon={faSignOutAlt} /> <span> Log Out </span>
                 </Link>
             </div>

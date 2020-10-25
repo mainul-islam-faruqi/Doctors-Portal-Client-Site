@@ -4,6 +4,15 @@ import Sidebar from '../Sidebar/Sidebar';
 import { UserContext } from '../../../App';
 import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
 
+import 'date-fns';
+import Grid from '@material-ui/core/Grid';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+    MuiPickersUtilsProvider,
+    KeyboardDatePicker,
+} from '@material-ui/pickers';
+
+
 const Dashboard = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [selectedDate, setSelectedDate] = useState(new Date());
@@ -24,7 +33,7 @@ const Dashboard = () => {
                 console.log(data)
                 setAppointments(data)
             })
-    }, [])
+    }, [selectedDate])
 
     return (
         <main>
@@ -81,12 +90,31 @@ const Dashboard = () => {
                         </div>
                     </div>
 
-                    <div className="appointmentByDate mt-5 ml-2">
+                    <div className="appointmentByDate appointment-list mt-5 ml-2">
 
                         <div className="appointmentByDate-header pb-5 d-flex justify-content-between">
                             <h6 className="text-brand font-weight-bold" > Recent Appointments</h6>
 
-                            <h6 className="text-secondary font-weight-bold" > {selectedDate.toDateString()}  </h6>
+                            <h6 className="text-secondary font-weight-bold" > 
+
+                                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                    <Grid container justify="space-around">
+
+                                        <KeyboardDatePicker
+                                            id="date-picker-dialog"
+                                            format="dd/MM/yyyy"
+                                            value={selectedDate}
+                                            onChange={handleDateChange}
+                                            KeyboardButtonProps={{
+                                                'aria-label': 'change date',
+                                            }}
+                                            
+                                        />
+
+                                    </Grid>
+                                </MuiPickersUtilsProvider>
+
+                            </h6>
                         </div>
 
                         <table className="table table-borderless">
