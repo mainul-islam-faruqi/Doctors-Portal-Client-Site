@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import './Dashboard.css';
 import Sidebar from '../Sidebar/Sidebar';
 import { UserContext } from '../../../App';
-import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
 
 import 'date-fns';
 import Grid from '@material-ui/core/Grid';
@@ -11,6 +10,7 @@ import {
     MuiPickersUtilsProvider,
     KeyboardDatePicker,
 } from '@material-ui/pickers';
+import DashboardAppointmentTable from './DashboardAppointmentTable';
 
 
 const Dashboard = () => {
@@ -133,35 +133,8 @@ const Dashboard = () => {
 
                                 {
                                     appointments.map((appointment, index) =>
-                                        <tr key={appointment._id}>
-                                            <td> {index + 1} </td>
-                                            <td>  {selectedDate.toDateString()} </td>
-                                            <td> {appointment.schedule} </td>
-                                            <td> {appointment.name} </td>
-                                            <td> {appointment.phone} </td>
-                                            <td>
-                                                <div className="button-primary">
-                                                    view
-                                                </div>
-                                            </td>
-
-                                            <td>
-                                                <div className="select-main-container">
-                                                    <div className="select-container">
-                                                        <select className="select" id="validationTooltip04" required>
-                                                            <option selected value=""> Pending </option>
-                                                            <option> Approved </option>
-                                                            <option> Canceled </option>
-                                                        </select>
-                                                        <div className="create-icon">
-                                                            <CreateOutlinedIcon />
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-                                            </td>
-                                        </tr>
+                                    <DashboardAppointmentTable key={appointment._id} appointment={appointment} date={selectedDate} idx={index}  />
+                                        
                                     )
                                 }
 
