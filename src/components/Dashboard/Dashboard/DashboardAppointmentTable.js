@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
 
 
 const DashboardAppointmentTable = ({ appointment, date, idx }) => {
+    const [action, setAction] = useState(appointment.action.toLowerCase());
+    const onChangeActionHandler = e => {
+        setAction(e.target.value.toLowerCase())
+        fetch('http://localhost:5000/update-status', {
+            method:'PATCH',
+            headers: {'content-Type':'application/json'},
+            body: JSON.stringify({
+                action:e.target.value, // if giving action state, it will go the previous action bcz setAtion and fetch are called at the same time.
+                id: appointment._id
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+    }
+    console.log(appointment.action)
+    console.log(appointment._id)
     return (
         <tr>
             <td> {idx + 1} </td>
@@ -19,7 +37,7 @@ const DashboardAppointmentTable = ({ appointment, date, idx }) => {
             <td>
                 <div className="select-main-container">
                     <div className="select-container">
-                        <select className="select" id="validationTooltip04" required>
+                        <select className="select" id="validationTooltip04" onChange={onChangeActionHandler} required>
                             <option selected value=""> Pending </option>
                             <option> Approved </option>
                             <option> Canceled </option>

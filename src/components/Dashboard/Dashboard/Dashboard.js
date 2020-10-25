@@ -33,7 +33,7 @@ const Dashboard = () => {
                 console.log(data)
                 setAppointments(data)
             })
-    }, [selectedDate])
+    }, [selectedDate,loggedInUser.email])
 
     return (
         <main>
