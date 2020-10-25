@@ -55,6 +55,24 @@
     color: #adadad;
 }
 
+.MuiPickersToolbar-toolbar{
+    background-image: linear-gradient(45deg, #18d2af, #0fcfe7  );
+}
+
+.MuiPickersDay-current{
+    color: orange !important;
+}
+
+.MuiPickersDay-daySelected {
+    background-image: linear-gradient(45deg, #18d2af, #0fcfe7  );
+}
+
+
+.MuiPickersDay-daySelected:hover{
+    background-color: #0fcfe7;
+}
+
+
 
 /*  select dropdown  */
 .select-main-container{
