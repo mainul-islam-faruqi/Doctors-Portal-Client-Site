@@ -7,17 +7,17 @@ const DashboardAppointmentTable = ({ appointment, date, idx }) => {
     const onChangeActionHandler = e => {
         setAction(e.target.value.toLowerCase())
         fetch('http://localhost:5000/update-status', {
-            method:'PATCH',
-            headers: {'content-Type':'application/json'},
+            method: 'PATCH',
+            headers: { 'content-Type': 'application/json' },
             body: JSON.stringify({
-                action:e.target.value, // if giving action state, it will go the previous action bcz setAtion and fetch are called at the same time.
+                action: e.target.value, // if giving action state, it will go the previous action bcz setAtion and fetch are called at the same time.
                 id: appointment._id
             })
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
     }
     console.log(appointment.action)
     console.log(appointment._id)
@@ -35,20 +35,50 @@ const DashboardAppointmentTable = ({ appointment, date, idx }) => {
             </td>
 
             <td>
-                <div className="select-main-container">
-                    <div className="select-container">
-                        <select className="select" id="validationTooltip04" onChange={onChangeActionHandler} required>
-                            <option selected value=""> Pending </option>
-                            <option> Approved </option>
-                            <option> Canceled </option>
-                        </select>
-                        <div className="create-icon">
-                            <CreateOutlinedIcon />
+                {action === "pending" &&
+                    <div className="select-main-container">
+                        <div className="select-container">
+                            <select className={`select select-${action}`} id="validationTooltip04" onChange={onChangeActionHandler} required>
+                                <option selected value=""> Pending </option>
+                                <option> Approved </option>
+                                <option> Canceled </option>
+                            </select>
+                            <div className="create-icon">
+                                <CreateOutlinedIcon />
+                            </div>
                         </div>
-
                     </div>
-                </div>
+                }
 
+                {action === "approved" &&
+                    <div className="select-main-container">
+                        <div className="select-container">
+                            <select className={`select select-${action}`} id="validationTooltip04" onChange={onChangeActionHandler} required>
+                                <option value=""> Pending </option>
+                                <option selected> Approved </option>
+                                <option> Canceled </option>
+                            </select>
+                            <div className="create-icon">
+                                <CreateOutlinedIcon />
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                {action === "canceled" &&
+                    <div className="select-main-container">
+                        <div className="select-container">
+                            <select className={`select select-${action}`}  id="validationTooltip04" onChange={onChangeActionHandler} required>
+                                <option value=""> Pending </option>
+                                <option > Approved </option>
+                                <option selected> Canceled </option>
+                            </select>
+                            <div className="create-icon">
+                                <CreateOutlinedIcon />
+                            </div>
+                        </div>
+                    </div>
+                }
             </td>
         </tr>
     );

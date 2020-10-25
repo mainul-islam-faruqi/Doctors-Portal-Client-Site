@@ -82,8 +82,8 @@
 
 
 
-.select-container select{
-    background-color:#76c5ff;
+.select-container .select{
+    
     border-right: 2px solid #fff;
     margin: 0;
     width: 140px;
@@ -96,6 +96,19 @@
     -webkit-appearance: button;
     color: white;
 }
+
+.select-container > .select-pending{
+    background-color:#76c5ff;
+}
+
+.select-container > .select-approved{
+    background-color: #38af86;
+}
+
+.select-container > .select-canceled{
+    background-color: #ff5073;
+}
+
 
 .create-icon{
     color: #fff;
