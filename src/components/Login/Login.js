@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from "./firebase.config";
@@ -42,6 +42,18 @@ const Login = () => {
                 console.log(error)
             });
     }
+
+    useEffect(()=>{
+        loggedInUser.email && fetch('http://localhost:5000/addPatient', {
+            method:'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify({loggedInUser})
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
+    },[loggedInUser.email])
+
 
     return (
         <div className="login-page container">
