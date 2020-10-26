@@ -18,6 +18,9 @@ const Dashboard = () => {
     const [selectedDate, setSelectedDate] = useState(new Date());
     const [appointments, setAppointments] = useState([]);
 
+    const [totalAppointment, setTotalAppointment] = useState([]);
+    const [pending, setPending] = useState(0);
+
     const handleDateChange = date => {
         setSelectedDate(date);
 
@@ -33,7 +36,26 @@ const Dashboard = () => {
                 console.log(data)
                 setAppointments(data)
             })
+
+        fetch('http://localhost:5000/get-all-appointment',{
+            method: 'GET',
+            headers: {'Content-Type': 'application/json'}
+        })
+        .then(res => res.json())
+        .then(data=> {
+            setTotalAppointment(data);
+        })
+
     }, [selectedDate,loggedInUser.email])
+
+
+useEffect(()=> {
+    const pd = appointments.filter(appointment => appointment.action.toLowerCase() === 'pending')
+setPending(pd.length)
+},[appointments])
+            
+                
+    
 
     return (
         <main>
@@ -47,7 +69,7 @@ const Dashboard = () => {
                         <div className="col mb-4  col-lg-3 col-md-6 col-xs-12 ">
                             <div className="pending  d-flex justify-content-around align-items-center">
                                 <div className="number">
-                                    09
+                                    {pending}
                                 </div>
 
                                 <div className="status">
@@ -58,22 +80,22 @@ const Dashboard = () => {
                         <div className="col mb-4  col-lg-3 col-md-6 ">
                             <div className="todays-appointment  d-flex justify-content-around align-items-center">
                                 <div className="number">
-                                    09
+                                    {appointments.length}
                                 </div>
 
                                 <div className="status">
-                                    Pending <br /> Appointments
+                                    Today's <br /> Appointments
                                 </div>
                             </div>
                         </div>
                         <div className="col mb-4  col-lg-3 col-md-6 ">
                             <div className="total-appointment  d-flex justify-content-around align-items-center">
                                 <div className="number">
-                                    09
+                                    {totalAppointment.length}
                                 </div>
 
                                 <div className="status">
-                                    Pending <br /> Appointments
+                                    Total <br /> Appointments
                                 </div>
                             </div>
                         </div>
@@ -133,7 +155,7 @@ const Dashboard = () => {
 
                                 {
                                     appointments.map((appointment, index) =>
-                                    <DashboardAppointmentTable key={appointment._id} appointment={appointment} date={selectedDate} idx={index}  />
+                                    <DashboardAppointmentTable key={appointment._id} appointment={appointment} date={selectedDate} idx={index} setPending={setPending} pending={pending} appointments={appointments} />
                                         
                                     )
                                 }

@@ -2,10 +2,16 @@ import React, { useState } from 'react';
 import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
 
 
-const DashboardAppointmentTable = ({ appointment, date, idx }) => {
+const DashboardAppointmentTable = ({ appointment, date, idx,pending, setPending  }) => {
     const [action, setAction] = useState(appointment.action.toLowerCase());
     const onChangeActionHandler = e => {
         setAction(e.target.value.toLowerCase())
+        if(e.target.value.toLowerCase() === 'pending'){
+            setPending(pending + 1)
+        }
+        else{
+            setPending(pending - 1)
+        }
         fetch('http://localhost:5000/update-status', {
             method: 'PATCH',
             headers: { 'content-Type': 'application/json' },
@@ -17,10 +23,10 @@ const DashboardAppointmentTable = ({ appointment, date, idx }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                
             })
     }
-    console.log(appointment.action)
-    console.log(appointment._id)
+    
     return (
         <tr>
             <td> {idx + 1} </td>
