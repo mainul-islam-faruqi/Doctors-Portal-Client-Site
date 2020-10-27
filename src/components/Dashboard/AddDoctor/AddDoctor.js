@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Sidebar from '../Dashboard/Sidebar/Sidebar';
+import Sidebar from '../Sidebar/Sidebar';
 
 const AddDoctor = () => {
 
@@ -32,7 +32,7 @@ const AddDoctor = () => {
     return (
         <section className="container-fluid row">
             <Sidebar/>
-            <div className="col-md-10">
+            <div className="col-md-9">
                 <h5> Add a Doctor </h5>
 
                 <form onSubmit={handleSubmit}>

@@ -75,13 +75,16 @@ const Prescriptions = () => {
 
                                     patients.map((patient, index) =>
                                         <tr>
-                                            <td> { index < 9? `0${index+1}`: index +1} </td>
+                                            <td> {index < 9 ? `0${index + 1}` : index + 1} </td>
                                             <td> {selectedDate.toDateString()} </td>
                                             <td> {patient.name} </td>
                                             <td> {patient.phone} </td>
-                                            <td> {patient.gender}  </td>
 
-                                            <td> Dhaka, Bangladesh </td>
+                                            <td> 
+                                                <div className="button-primary" style={{ width: "90px", textAlign: "center" }}>
+                                                view
+                                                </div>
+                                            </td>
                                         </tr>
                                     )
                                 }

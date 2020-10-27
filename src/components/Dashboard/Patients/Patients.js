@@ -79,10 +79,10 @@ const Patients = () => {
                                         <tr>
                                             <td> { index < 9? `0${index+1}`: index +1} </td>
                                             <td> {patient.name} </td>
-                                            <td> {patient.gender}  </td>
-                                            <td> {patient.age} </td>
-                                            <td> {patient.weight} </td>
-                                            <td> {patient.phone} </td>
+                                            <td> {patient.gender?patient.gender: "Not Set"}  </td>
+                                            <td> {patient.age?patient.age: "Not Set"} </td>
+                                            <td> {patient.weight?patient.weight: "Not Set"} </td>
+                                            <td> {patient.phone?patient.phone: "Not Set"} </td>
 
                                             <td> Dhaka, Bangladesh </td>
                                         </tr>

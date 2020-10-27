@@ -5,7 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import './App.css';
-import AddDoctor from './components/AddDoctor/AddDoctor';
+import AddDoctor from './components/Dashboard/AddDoctor/AddDoctor';
 import Appointment from './components/Appointment/Appointment/Appointment';
 import DashboardAppointment from './components/Dashboard/DashboardAppointment/DashboardAppointment';
 import Home from './components/Home/Home/Home';
