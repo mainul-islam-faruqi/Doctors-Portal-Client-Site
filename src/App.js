@@ -15,6 +15,7 @@ import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import jwt_decode from "jwt-decode"
 import { useEffect } from 'react';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
+import Patients from './components/Dashboard/Dashboard/Patients/Patients';
 
 export const UserContext = createContext();
 
@@ -49,6 +50,10 @@ useEffect(()=> {
          <PrivateRoute path="/dashboard-appointment">
            <DashboardAppointment/>
          </PrivateRoute>
+
+         <Route path="/patients">
+           <Patients/>
+         </Route>
 
          <PrivateRoute path="/addDoctor">
            <AddDoctor />

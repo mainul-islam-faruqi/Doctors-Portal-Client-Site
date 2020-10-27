@@ -3,7 +3,7 @@ import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
 
 
 const DashboardAppointmentTable = ({ appointment, date, idx,pending, setPending  }) => {
-    const [action, setAction] = useState(appointment.action.toLowerCase());
+    const [action, setAction] = useState(appointment.action?.toLowerCase());
     const onChangeActionHandler = e => {
         setAction(e.target.value.toLowerCase())
         if(e.target.value.toLowerCase() === 'pending'){

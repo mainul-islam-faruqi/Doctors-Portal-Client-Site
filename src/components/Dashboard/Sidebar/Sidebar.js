@@ -47,7 +47,7 @@ const Sidebar = () => {
 
 
                         <li>
-                            <Link className="text-white" to="/patient">
+                            <Link className="text-white" to="/patients">
                                 <FontAwesomeIcon icon={faUsers} /> <span> Patients </span>
                             </Link>
                         </li>
