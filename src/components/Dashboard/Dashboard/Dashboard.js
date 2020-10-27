@@ -20,6 +20,7 @@ const Dashboard = () => {
 
     const [totalAppointment, setTotalAppointment] = useState([]);
     const [pending, setPending] = useState(0);
+    const [allPatient, setAllPatient] = useState([]);
 
     const handleDateChange = date => {
         setSelectedDate(date);
@@ -45,6 +46,16 @@ const Dashboard = () => {
         .then(data=> {
             setTotalAppointment(data);
         })
+        
+        fetch('http://localhost:5000/all-patient',{
+            method: 'GET',
+            headers:{'Content-Type': 'application/json'}
+        })
+        .then(res => res.json())
+        .then(data =>{
+            setAllPatient(data);
+        })
+
 
     }, [selectedDate,loggedInUser.email])
 
@@ -102,11 +113,11 @@ setPending(pd.length)
                         <div className="col mb-4 col-lg-3 col-md-6 ">
                             <div className="total-patients  d-flex justify-content-around align-items-center">
                                 <div className="number">
-                                    09
+                                    {allPatient.length}
                                 </div>
 
                                 <div className="status">
-                                    Pending <br /> Appointments
+                                    Total <br /> Patients
                                 </div>
                             </div>
                         </div>

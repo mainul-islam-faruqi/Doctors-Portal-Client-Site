@@ -48,7 +48,6 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentSub,schedule, dat
                 alert("Appointment created successfully.");
             }
         })
-        
     }
 
 
