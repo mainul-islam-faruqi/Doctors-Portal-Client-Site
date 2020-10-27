@@ -48,6 +48,16 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentSub,schedule, dat
                 alert("Appointment created successfully.");
             }
         })
+
+        fetch('http://localhost:5000/addPatient',{
+            method:'POST',
+            headers: {'content-type': 'application/json'},
+            body:JSON.stringify({loggedInUser:{name:data.name, email:data.email}})
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+        })
     }
 
 
