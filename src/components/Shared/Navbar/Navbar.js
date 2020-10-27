@@ -19,17 +19,17 @@ const Navbar = () => {
                         <Link className="nav-link mr-5 font-weight-bold" to="#">About</Link>
                     </li>
                     <li className="nav-item active">
-                        <Link className="nav-link mr-5 font-weight-bold" to="/dashboard"> Dashboard </Link>
+                        <Link className="nav-link mr-5 font-weight-bold" to="/appointment"> Get appointment </Link>
                     </li>
 
                     <li className="nav-item">
-                        <Link className={`nav-link mr-5 font-weight-bold ${window.location.pathname === '/appointment'? 'text-white': "text-white"}`}  style={{backgroundColor: " #3a4256 ", padding: "5px 10px"}} to="#">Reviews</Link>
+                        <Link className={`nav-link mr-5 font-weight-bold ${window.location.pathname === '/appointment'? 'text-white': "text-white"}`}  style={{backgroundColor: " #3a4256 ", padding: "5px 20px"}} to="/dashboard"> Dashboard </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={`nav-link mr-5 font-weight-bold ${window.location.pathname === '/appointment'? 'text-white': "text-white"}`} style={{backgroundColor: " #3a4256 ", padding: "5px 10px"}} to="#">Blog</Link>
+                        <Link className={`nav-link mr-5 font-weight-bold ${window.location.pathname === '/appointment'? 'text-white': "text-white"}`} style={{backgroundColor: " #3a4256 ", padding: "5px 20px"}} to="#">Blog</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className={`nav-link mr-5 font-weight-bold ${window.location.pathname === '/appointment'? 'text-white': "text-white"}`} style={{backgroundColor: " #3a4256 ", padding: "5px 10px"}} to="#">Contact Us</Link>
+                        <Link className={`nav-link mr-5 font-weight-bold ${window.location.pathname === '/appointment'? 'text-white': "text-white"}`} style={{backgroundColor: " #3a4256 ", padding: "5px 20px"}} to="#">Contact Us</Link>
                     </li>
                    
                    

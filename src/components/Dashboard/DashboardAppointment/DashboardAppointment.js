@@ -39,10 +39,10 @@ const DashboardAppointment = () => {
                 </div>
                 <div className="col-md-10 dashboard-container">
                 <div className="header"> <h3> Appointments </h3> </div>
-                    <div className="row">
+                    <div className="row d-flex justify-content-center ">
                         
-                        <div className="col-md-6">
-                            <div className="react-calendar-custom">
+                        <div className=" col col-sm-12 col-md-6 col-lg-5 col-xl-5 ">
+                            <div className="react-calendar-custom ">
                                 <Calendar
                                     onChange={handleDateChange}
                                     value={selectedDate}

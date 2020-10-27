@@ -4,7 +4,7 @@
     padding: 2.5rem 1.2rem;
     display: flex;
     justify-content: center;
-    /* width: 26rem; */
+    max-width: 26rem;
 }
 
 .react-calendar{
