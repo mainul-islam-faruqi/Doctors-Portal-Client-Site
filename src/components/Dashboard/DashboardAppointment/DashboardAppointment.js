@@ -57,8 +57,6 @@ const DashboardAppointment = () => {
                     </div>
                 </div>
             </div>
-
-            <Calendar/>
         </main>
     );
 };

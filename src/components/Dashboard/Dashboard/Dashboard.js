@@ -165,9 +165,9 @@ setPending(pd.length)
                             <tbody>
 
                                 {
-                                    appointments.map((appointment, index) =>
+                                    
+                                    appointments.slice(0, 7).map((appointment, index) =>
                                     <DashboardAppointmentTable key={appointment._id} appointment={appointment} date={selectedDate} idx={index} setPending={setPending} pending={pending} appointments={appointments} />
-                                        
                                     )
                                 }
 

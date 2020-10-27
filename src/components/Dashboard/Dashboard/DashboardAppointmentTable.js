@@ -35,7 +35,7 @@ const DashboardAppointmentTable = ({ appointment, date, idx,pending, setPending 
             <td> {appointment.name} </td>
             <td> {appointment.phone} </td>
             <td>
-                <div className="button-primary">
+                <div className="button-primary" style={{width: "90px", textAlign: "center"}}>
                     view
                 </div>
             </td>
