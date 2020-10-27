@@ -16,12 +16,20 @@ const Sidebar = () => {
         })
             .then(res => res.json())
             .then(data => {
-                setLoggedInUser({...loggedInUser, isDoctor: true})
+                if(data){
+                    setLoggedInUser({...loggedInUser, isDoctor: true})
+                }
+                
             });
     }, [loggedInUser.email])
 
+    const handleLogout = () => {
+        sessionStorage.removeItem('token');
+        setLoggedInUser({ isDoctor: false})
+    }
+
     return (
-        <div className="sidebar  py-5 px-4" style={{ height: "100vh" }}  >
+        <div className="sidebar  py-5 px-4"   >
             <ul className="list-unstyled pl-xl-3">
                 <li>
                     <Link className="text-white" to="/dashboard">
@@ -41,7 +49,7 @@ const Sidebar = () => {
                     </Link>
                 </li>
 
-                {loggedInUser.isDoctor &&
+                {loggedInUser.email &&
                     <div className="doctors-container">
 
 
@@ -75,7 +83,7 @@ const Sidebar = () => {
             </ul>
 
             <div >
-                <Link className="text-white logout pl-xl-3" to="/" >
+                <Link className="text-white logout pl-xl-3" to="/dashboard"  onClick={handleLogout}>
                     <FontAwesomeIcon icon={faSignOutAlt} /> <span> Log Out </span>
                 </Link>
             </div>

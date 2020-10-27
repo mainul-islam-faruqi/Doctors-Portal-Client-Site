@@ -1,6 +1,7 @@
 .sidebar{
     background-image: linear-gradient(180deg, #18d2af, #0fcfe7  );
     min-width: 300px;
+    min-height: 100%;
 }
 
 .sidebar > ul > li {
