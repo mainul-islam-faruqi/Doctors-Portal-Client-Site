@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import './DashboardAppointment.css';
 import Calendar from 'react-calendar';
 import { UserContext } from '../../../App';
-import AppointmentByDate from '../AppointmentByDate/AppointmentByDate';
+import AppointmentByDate from './AppointmentByDate/AppointmentByDate';
 import Sidebar from '../Sidebar/Sidebar';
 
 const DashboardAppointment = () => {

@@ -4,8 +4,7 @@ import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
 import { Grid } from '@material-ui/core';
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
-import Sidebar from '../../Sidebar/Sidebar';
-import DashboardAppointmentTable from '../DashboardAppointmentTable';
+import Sidebar from '../Sidebar/Sidebar';
 
 const Patients = () => {
     const [selectedDate, setSelectedDate] = useState(new Date())
@@ -78,7 +77,7 @@ const Patients = () => {
 
                                     patients.map((patient, index) =>
                                         <tr>
-                                            <td> {index+1} </td>
+                                            <td> { index < 9? `0${index+1}`: index +1} </td>
                                             <td> {patient.name} </td>
                                             <td> {patient.gender}  </td>
                                             <td> {patient.age} </td>

@@ -29,7 +29,7 @@ const DashboardAppointmentTable = ({ appointment, date, idx,pending, setPending 
     
     return (
         <tr>
-            <td> {idx + 1} </td>
+            <td> { idx < 9? `0${idx+1}`: idx +1} </td>
             <td>  {date.toDateString()} </td>
             <td> {appointment.schedule} </td>
             <td> {appointment.name} </td>
