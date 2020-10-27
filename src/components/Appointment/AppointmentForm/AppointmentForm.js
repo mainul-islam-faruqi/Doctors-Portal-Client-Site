@@ -52,7 +52,7 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentSub,schedule, dat
         fetch('http://localhost:5000/addPatient',{
             method:'POST',
             headers: {'content-type': 'application/json'},
-            body:JSON.stringify({loggedInUser:{name:data.name, email:data.email}})
+            body:JSON.stringify({loggedInUser:data})
         })
         .then(res => res.json())
         .then(data => {

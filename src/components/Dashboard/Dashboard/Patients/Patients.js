@@ -80,17 +80,12 @@ const Patients = () => {
                                         <tr>
                                             <td> {index+1} </td>
                                             <td> {patient.name} </td>
-                                            <td>   </td>
-                                            <td> </td>
-                                            <td>  </td>
-                                            <td>
-                                                
-                                            </td>
+                                            <td> {patient.gender}  </td>
+                                            <td> {patient.age} </td>
+                                            <td> {patient.weight} </td>
+                                            <td> {patient.phone} </td>
 
-                                            <td>
-
-
-                                            </td>
+                                            <td> Dhaka, Bangladesh </td>
                                         </tr>
                                     )
                                 }
